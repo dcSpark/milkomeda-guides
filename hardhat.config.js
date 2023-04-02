@@ -5,8 +5,8 @@ require("dotenv").config();
 module.exports = {
   solidity: "0.8.17",
   networks: {
-    c1_testnet: {
-      url: `https://rpc-devnet-cardano-evm.c1.milkomeda.com`,
+    a1_testnet: {
+      url: `https://rpc-devnet-algorand-rollup.a1.milkomeda.com`,
       accounts: [`0x${process.env.PRIVATE_KEY}`]
     }
   }  

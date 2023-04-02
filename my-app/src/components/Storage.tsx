@@ -3,7 +3,7 @@ import { useState } from "react";
 import StorageInfo from '../../../artifacts/contracts/SimpleStorage.sol/Storage.json'
 
 function Storage() {
-    const CONTRACT_ADDRESS = "0x5d85a5D5F759F3Cb0A7B78d2381D789929e92FF3"
+    const CONTRACT_ADDRESS = "0x1a56Bd2F258aF7267e91184e6aeD742C340C0BC3"
     const [inputValue, setInputValue] = useState("0")
 
     const { config } = usePrepareContractWrite({
