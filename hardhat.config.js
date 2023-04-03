@@ -49,7 +49,7 @@ task("latestRequest", "Get latest Request")
 task("fulfillStatus", "Check request status")
 .addParam("request", "ID of the request")
 .setAction(async (taskArgs) => {  
-  const qrng = await hre.ethers.getContractAt("QrngExample", process.env.DEPLOYMENT_ADDRESS);
+  const qrng = await hre.ethers.getContractAt("QrngExample", DEPLOYMENT_ADDRESS);
   const status = await qrng.waitingFulfillment(taskArgs.request)
   console.log("Waiting for fulfillment:", status);
 });
