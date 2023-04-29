@@ -1,12 +1,12 @@
 const hre = require("hardhat");
 
 async function main() {
-  const Feed = await hre.ethers.getContractFactory("PriceFeedContract");
+  const Feed = await hre.ethers.getContractFactory("PriceFeedConsumer");
   const feed = await Feed.deploy();
 
   await feed.deployed();
   console.log(
-    `PriceFeedContract deployed to ${feed.address}`
+    `PriceFeedConsumer deployed to ${feed.address}`
   );
 }
 
