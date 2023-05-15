@@ -7,13 +7,13 @@ config = dotenv_values(".env")
 
 signer = Account.from_key(config['PRIVATE_KEY'])
 
-rpc_url = "https://rpc-mainnet-cardano-evm.c1.milkomeda.com"
+rpc_url = "https://rpc-devnet-cardano-evm.c1.milkomeda.com"
 
 web3 = Web3(Web3.HTTPProvider(rpc_url))
-print("Connected to Milkomeda C1 Mainnet:", web3.is_connected())
+print("Connected to Milkomeda C1 Testnet:", web3.is_connected())
 
 
-oracle_address = "0x49484Ae8646C12A8A68DfE2c978E9d4Fa5b01D16" # Mainnet
+oracle_address = "0x47a7d67e89E5714456b9af39703C1dc62203002A" # Testnet
 
 res = requests.get("https://raw.githubusercontent.com/DjedAlliance/Oracle-Solidity/main/abi/Aggr3Oracle.json")
 abi = res.json().get('abi')

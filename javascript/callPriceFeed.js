@@ -2,10 +2,10 @@ const ethers = require("ethers");
 require("dotenv").config();
 const abi = require('./Oracle.json').abi
 
-const rpcURL = "https://rpc-mainnet-cardano-evm.c1.milkomeda.com"
+const rpcURL = "https://rpc-devnet-cardano-evm.c1.milkomeda.com"
 const provider = new ethers.JsonRpcProvider(rpcURL)
 const signer = new ethers.Wallet( `0x${process.env.PRIVATE_KEY}`, provider )
-const oracle = new ethers.Contract("0x49484Ae8646C12A8A68DfE2c978E9d4Fa5b01D16", abi, signer)
+const oracle = new ethers.Contract("0x47a7d67e89E5714456b9af39703C1dc62203002A", abi, signer)
 
 
 // oracle.acceptedTermsOfService(signer.address)

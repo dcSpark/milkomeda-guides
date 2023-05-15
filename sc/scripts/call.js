@@ -1,7 +1,7 @@
 const hre = require("hardhat");
 
 const getPrice = async () => {
-    const address = '0xd7a246726355961197c0E32d7914aDDa3dB3f4E4'
+    const address = '0xD5d35dC8f4e942Ec2B43290c6C2EDA4bab2d2c05'
     const feed = await hre.ethers.getContractAt("PriceFeedConsumer", address);
 
     const price = await feed.getPrice()
