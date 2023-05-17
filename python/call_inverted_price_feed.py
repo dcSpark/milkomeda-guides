@@ -12,9 +12,11 @@ rpc_url = "https://rpc-devnet-cardano-evm.c1.milkomeda.com"
 web3 = Web3(Web3.HTTPProvider(rpc_url))
 print("Connected to Milkomeda C1 Testnet:", web3.is_connected())
 
-oracle_address = "0x2a16a70E71D2C6f07F02b221B441a2e35E3d0848" # Testnet
+
+oracle_address = "0x47a7d67e89E5714456b9af39703C1dc62203002A" # Testnet
 
 res = requests.get("https://raw.githubusercontent.com/DjedAlliance/Oracle-Solidity/main/abi/Aggr3Oracle.json")
+res = requests.get("https://raw.githubusercontent.com/unitedx-finance/A3-Oracle/main/abi/Aggr3Oracle.json")
 abi = res.json().get('abi')
 
 
@@ -25,6 +27,8 @@ def sign_and_send(txn, account):
     tx_hash = web3.eth.send_raw_transaction(signed_txn.rawTransaction)
     receipt = web3.eth.wait_for_transaction_receipt(tx_hash)
     return receipt
+
+print("Description: USD/ADA")
 
 
 has_accepted = oracle.functions.acceptedTermsOfService(signer.address).call()

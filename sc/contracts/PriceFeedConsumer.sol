@@ -9,7 +9,7 @@ contract PriceFeedConsumer {
     IOracle public oracle;
  
     constructor() {
-        oracle = IOracle(0x47a7d67e89E5714456b9af39703C1dc62203002A);
+        oracle = IOracle(0x2a16a70E71D2C6f07F02b221B441a2e35E3d0848);
         oracle.acceptTermsOfService();
     }
 
